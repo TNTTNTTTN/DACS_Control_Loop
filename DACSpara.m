@@ -23,7 +23,7 @@ Amax = 362.97; % Max attitude thrust [N]
 % Initial condition
 phi = 0; % degree
 theta = 30; % degree
-%psi = 0; % degree
+psi = 25; % degree
 UVWinit = [1000; 0; 0]; % Initial velocity of Missile [m/s;m/s;m/s]
 PQRinit = [0; 0; 0]; % Initial anglar rate of Missile [rad/s;rad/s;rad/s]
 POSinit = [0; 0; 0]; % Initial Position of Missile [m;m;m];
