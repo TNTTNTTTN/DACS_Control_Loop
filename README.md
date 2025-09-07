@@ -1,17 +1,26 @@
-# DACS Missile Control Loop Simulation
-## 전체 개발 노트 
-[Note](https://lapis-scabiosa-94b.notion.site/DACS-79ce14c7882a41a89da311fb5f4485f8)
+# 중간단계 탄도미사일 요격을 위한 우주기반 요격체 유도제어
+* 2023 항공우주학회 추계학술대회 발표 [DBPia](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11658039)
 
-- Equation of Motion <br>
-[Equation of Motion](https://lapis-scabiosa-94b.notion.site/Equation-of-Motion-4f930b58f71a4f1b8d83cdaa97f2f06a)
+## 개요
+* 탄도미사일의 기술이 발전하는 상황에서, 방어 대책 또한 지속적으로 발전하고 연구되어야 함
+* 탄도미사일을 요격하는 방안으로 우주환경에서 상주하는 요격 체계가 연구된 바가 있음
+* 이에 우주기반 요격체를 통해 탄도미사일을 요격하기 위한 제어 법칙을 설계하고, <br /> 교전 시뮬레이션을 통해 요격체의 유효성을 확인하고자 함
 
-- Atttude Controller <br>
-[Atttude Controller](https://lapis-scabiosa-94b.notion.site/Attitude-Controller-eb5c8dca57c4404795da21abd6ccd8ed)
-- Guidance Law <br>
-[Guidance Law](https://lapis-scabiosa-94b.notion.site/Guidance-Law-e1620fd6e3c7412b960b331846a7ec8f)
+![Introduction](ASSET/Introduction.jpg)
+## 제어 법칙 구성
+* 외기권 환경에서 공력에 의한 Disturbance가 없다고 가정한다
+* Quaternions 회전 좌표를 기반으로 PD 제어기 적용
+* 요격체의 운동이 순수 추력에 의존하는 외기권 환경을 고려하여 TPNG 유도 법칙 적용 
 
-- Parameter <br>
-[Parameter](https://lapis-scabiosa-94b.notion.site/Parameter-11f820a725824e869324d55d83bec7f6)
+![Control Diagram](ASSET/ControlDiagram.jpg)
 
-- Simulation Result <br>
-[Simulation Result](https://lapis-scabiosa-94b.notion.site/Simulation-Result-31ad1d26c7524d6b83dc6314a894fc5e)
+## 탄도 미사일 정의
+* 탄도 미사일은 초기 부스팅 이후 지구의 중력을 중심으로 타원 궤도로 비행한다고 가정
+* Kepler 6 Parameter 로 탄도 미사일의 궤적을 정의
+
+![Orbit](ASSET/Orbit.jpg)
+
+## 시뮬레이션 결과
+* 요격체의 초기 각도, 비행 속도, 탄도 미사일의 교전 초기 속도에 따라 요격 가능 여부가 변화하는 모습을 확인
+
+![Result](ASSET/Result.png)
